@@ -1,22 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+<meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
 
         :root {
             /* Core colors */
-            --toned-dark: #11234f;       
-            --toned-light: #20408f;      
-            --toned-lighter: #416cdb;  
-            --services-transparent: linear-gradient(90deg, transparent, #87aaeb, transparent);
+            --toned-dark: #114f12;       
+            --toned-light: #2d8f20;      
+            --toned-lighter: #41db50;    
+            --services-transparent: linear-gradient(90deg, transparent, #87eb8c, transparent);
 
             /* Shadows / overlays */
-            --toned-border: rgba(122, 108, 203, 0.3);
-            --toned-border-hovered: rgba(51, 49, 149, 0.5);
+            --toned-border: rgba(108, 203, 114, 0.3);
+            --toned-border-hovered: rgba(51, 149, 49, 0.5);
 
             /* Gradients */
             --toned-gradient: linear-gradient(135deg, var(--toned-light), var(--toned-dark));
@@ -76,7 +77,7 @@
         }
 
         .logo-text {
-            font-family: 'Racing Sans One', cursive;
+            font-family: 'Fugaz One', cursive;
             font-size: 2.8rem;
             color: var(--toned-dark);
             letter-spacing: 1px;
@@ -1029,202 +1030,159 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="contact-info">
-            <span><i class="fas fa-phone-alt"></i> <span id="topbar-phone"></span></span>
-            <span><i class="fas fa-envelope"></i> <span id="topbar-email"></span></span>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="nav-container">
-            <div id="logo-text" class="logo-text"></div>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a onclick="scrollToSection('hero')">Domov</a></li>
-                    <li><a onclick="scrollToSection('services')">Služby</a></li>
-                    <li><a onclick="scrollToSection('more-info')">Viac informácií</a></li>
-                    <li><a onclick="scrollToSection('gallery')">Galéria</a></li>
-                    <li><a onclick="scrollToSection('contact')">Kontakt</a></li>
-                </ul>
-                
-                <div class="hamburger" onclick="toggleMobileMenu()">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                
-                <ul class="mobile-menu" id="mobileMenu">
-                    <li><a onclick="scrollToSection('hero'); toggleMobileMenu()">Domov</a></li>
-                    <li><a onclick="scrollToSection('services'); toggleMobileMenu()">Služby</a></li>
-                    <li><a onclick="scrollToSection('more-info'); toggleMobileMenu()">Viac informácií</a></li>
-                    <li><a onclick="scrollToSection('gallery'); toggleMobileMenu()">Galéria</a></li>
-                    <li><a onclick="scrollToSection('contact'); toggleMobileMenu()">Kontakt</a></li>
-                </ul>
-                
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-container">
-            <div class="slideshow-container">
-                <div class="slide active">
-                    <img src="images/1.jpg">
-                </div>
-                <div class="slide active">
-                    <img src="images/2.jpg">
-                </div>
-                <div class="slide">
-                    <img src="images/3.jpg">
-                </div>
-                <div class="slide">
-                    <img src="images/6.jpg">
-                </div>
-            </div>
-            <div class="hero-content">
-                <h1 id="hero-headline"></h1>
-                <p id="typed-text-container"><span id="typed-text"></span><span id="cursor">|</span></p>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stats-grid">
-                <div class="stat-card fade-in-up">
-                    <div class="stat-number" id="counter1">1</div>
-                    <div class="stat-text">Roky skúsenosti</div>
-                </div>
-                <div class="stat-card fade-in-up">
-                    <div class="stat-number" id="counter2">1</div>
-                    <div class="stat-text">Spokojných zákazníkov</div>
-                </div>
-                <div class="stat-card fade-in-up">
-                    <div class="stat-number" id="counter3">1</div>
-                    <div class="stat-text">Spoľahlivosť</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 id="services-title" class="section-title fade-in-up"></h2>
-            <p id="services-subtitle" class="section-subtitle"></p>
-            <div id="services-list" class="services-grid"></div>
-        </div>
-    </section>
-  
-
-    <!-- More Info Section -->
-    <section id="more-info" class="more-info more-info-alt">
-        <div class="container">
-            <h2 id="moreinfo-title" class="section-title fade-in-up"></h2>
-            <p id="moreinfo-subtitle" class="section-subtitle"></p>
-            <div id="moreinfo-cards" class="info-grid"></div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Galéria</h2>
-            <p class="section-subtitle"></p>
-            
-            <div class="instagram-grid">
-                <div class="insta-post">
-                    <img src="images/1.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/2.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/3.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/4.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/5.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/6.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/7.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/8.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/9.jpg" alt="Realizácia">
-                </div>
-                <div class="insta-post">
-                    <img src="images/10.jpg" alt="Realizácia">
-                </div>
-                
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="https://www.instagram.com/km_odtahovka/" target="_blank" class="btn-primary">Náš instagram</a>
-            </div>
-        </div>
-    </section>
-
+<!-- Top Bar -->
+<div class="top-bar">
+<div class="contact-info">
+<span><i class="fas fa-phone-alt"></i> <span id="topbar-phone">0907 170 568</span></span>
+</div>
+</div>
+<!-- Header -->
+<header class="header">
+<div class="nav-container">
+<div class="logo-text" id="logo-text">PrepravaStrojov</div>
+<nav>
+<ul class="nav-menu">
+<li><a onclick="scrollToSection('hero')">Domov</a></li>
+<li><a onclick="scrollToSection('services')">Služby</a></li>
+<li><a onclick="scrollToSection('more-info')">Viac informácií</a></li>
+<li><a onclick="scrollToSection('gallery')">Galéria</a></li>
+<li><a onclick="scrollToSection('contact')">Kontakt</a></li>
+</ul>
+<div class="hamburger" onclick="toggleMobileMenu()">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<ul class="mobile-menu" id="mobileMenu">
+<li><a onclick="scrollToSection('hero'); toggleMobileMenu()">Domov</a></li>
+<li><a onclick="scrollToSection('services'); toggleMobileMenu()">Služby</a></li>
+<li><a onclick="scrollToSection('more-info'); toggleMobileMenu()">Viac informácií</a></li>
+<li><a onclick="scrollToSection('gallery'); toggleMobileMenu()">Galéria</a></li>
+<li><a onclick="scrollToSection('contact'); toggleMobileMenu()">Kontakt</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+<div class="hero-container">
+<div class="slideshow-container">
+<div class="slide active">
+<img src="images/1.jpg"/>
+</div>
+<div class="slide active">
+<img src="images/2.jpg"/>
+</div>
+<div class="slide">
+<img src="images/3.jpg"/>
+</div>
+<div class="slide">
+<img src="images/6.jpg"/>
+</div>
+</div>
+<div class="hero-content">
+<h1 id="hero-headline">Najlacnejšia odťahová a prepravná služba</h1>
+<p id="typed-text-container">Preprava strojov, techniky, kontajnerov a nadrozmerných nákladov po celom Slovensku.</p>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="stats">
+<div class="stats-container">
+<div class="stats-grid">
+<div class="stat-card fade-in-up">
+<div class="stat-number" id="counter1">1</div>
+<div class="stat-text">Rokov skúsenosti</div>
+</div>
+<div class="stat-card fade-in-up">
+<div class="stat-number" id="counter2">1</div>
+<div class="stat-text">Spokojných zákazníkov</div>
+</div>
+<div class="stat-card fade-in-up">
+<div class="stat-number" id="counter3">1</div>
+<div class="stat-text">Spoľahlivosť</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="services" id="services">
+<div class="container">
+<h2 class="section-title fade-in-up" id="services-title">Moje služby</h2>
+<p class="section-subtitle" id="services-subtitle">Komplexná odťahová a prepravná služba.</p>
+<div class="services-grid" id="services-list"><div class="service-card"><h3>🚛 Odtah a prevoz vozidiel</h3><p>Odtah osobných a nákladných vozidiel, techniky a strojov do hmotnosti 3,5 t, 10 t, 15 t až do 30 t.</p></div><div class="service-card"><h3>🏗️ Preprava strojov a techniky</h3><p>Preprava stavebných, poľnohospodárskych a lesných strojov – bagre, traktory, nakladače, valce, kombajny, manipulátory a ďalšia technika.</p></div><div class="service-card"><h3>📦 Nadrozmerná a špeciálna preprava</h3><p>Preprava kontajnerov, lodných kontajnerov, unimobuniek, mobilných domov, konštrukcií, panelov, síl a nadrozmerných nákladov.</p></div></div>
+</div>
+</section>
+<!-- More Info Section -->
+<section class="more-info more-info-alt" id="more-info">
+<div class="container">
+<h2 class="section-title fade-in-up" id="moreinfo-title">Prečo si vybrať moje služby?</h2>
+<p class="section-subtitle" id="moreinfo-subtitle">Rýchla dostupnosť, technické vybavenie a férové ceny.</p>
+<div class="info-grid" id="moreinfo-cards"><div class="info-card fade-in-up"><div class="info-header" onclick="toggleInfoCard(this)"><div class="info-icon"><i class="fa-solid fa-circle-info"></i></div><div class="info-text"><h3 class="info-title">Technické vybavenie</h3><div class="info-subtitle">Pripravené aj na náročné prevozy</div></div><div class="triangle-indicator"></div></div><div class="info-content"><p class="info-description">Disponujem vozidlami s ložnou plochou 8 až 14 metrov, šírkou 2,5 m, nízkym nájazdom, uhlbenou korbou pre vyššie stroje a navijakom do 14 t.</p><div class="info-highlights"><div class="highlight-item">Nízkoprofilový nájazd</div><div class="highlight-item">Navijak do 14 t</div><div class="highlight-item">Uhlbená korba</div></div><a class="btn-secondary" href="#contact">Objednať</a></div></div><div class="info-card fade-in-up"><div class="info-header" onclick="toggleInfoCard(this)"><div class="info-icon"><i class="fa-solid fa-circle-info"></i></div><div class="info-text"><h3 class="info-title">Široký rozsah prepravy</h3><div class="info-subtitle">Od minibagra po nadrozmer</div></div><div class="triangle-indicator"></div></div><div class="info-content"><p class="info-description">Prepravujem široké spektrum strojov a techniky: bagre, buldozéry, traktory, VZV, žeriavy, UNC, pásové rýpadlá, poľnohospodárske stroje a ďalšie zariadenia.</p><div class="info-highlights"><div class="highlight-item">Stavebné stroje</div><div class="highlight-item">Poľnohospodárska technika</div><div class="highlight-item">Lesné stroje</div></div><a class="btn-secondary" href="#contact">Objednať</a></div></div><div class="info-card fade-in-up"><div class="info-header" onclick="toggleInfoCard(this)"><div class="info-icon"><i class="fa-solid fa-circle-info"></i></div><div class="info-text"><h3 class="info-title">Nadrozmery a špeciály</h3><div class="info-subtitle">Bezpečne a spoľahlivo</div></div><div class="triangle-indicator"></div></div><div class="info-content"><p class="info-description">Zabezpečujem aj prepravu nadrozmerných nákladov, rozťahovacích návesov, podvalníkov a špeciálnych zostáv.</p><div class="info-highlights"><div class="highlight-item">Nadrozmerná preprava</div><div class="highlight-item">Podvalníky</div><div class="highlight-item">Rozťahovací náves</div></div><a class="btn-secondary" href="#contact">Objednať</a></div></div><div class="info-card fade-in-up"><div class="info-header" onclick="toggleInfoCard(this)"><div class="info-icon"><i class="fa-solid fa-circle-info"></i></div><div class="info-text"><h3 class="info-title">Férové ceny</h3><div class="info-subtitle">Najlacnejší odťah</div></div><div class="triangle-indicator"></div></div><div class="info-content"><p class="info-description">Ponúkam výhodné a transparentné ceny bez skrytých poplatkov. Cena sa stanovuje individuálne podľa typu prepravy.</p><div class="info-highlights"><div class="highlight-item">Dohodou</div><div class="highlight-item">Bez skrytých poplatkov</div><div class="highlight-item">Výhodné ceny</div></div><a class="btn-secondary" href="#contact">Objednať</a></div></div><div class="info-card fade-in-up"><div class="info-header" onclick="toggleInfoCard(this)"><div class="info-icon"><i class="fa-solid fa-circle-info"></i></div><div class="info-text"><h3 class="info-title">Dostupnosť</h3><div class="info-subtitle">Celé Slovensko</div></div><div class="triangle-indicator"></div></div><div class="info-content"><p class="info-description">Služby poskytujem po celom Slovensku – rýchly výjazd, flexibilné termíny a spoľahlivý prístup.</p><div class="info-highlights"><div class="highlight-item">Celé Slovensko</div><div class="highlight-item">Rýchly výjazd</div><div class="highlight-item">Nonstop dostupnosť</div></div><a class="btn-secondary" href="#contact">Objednať</a></div></div></div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="gallery" id="gallery">
+<div class="container">
+<h2 class="section-title">Galéria</h2>
+<p class="section-subtitle"></p>
+<div class="instagram-grid">
+<div class="insta-post">
+<img alt="Realizácia" src="images/1.jpg"/>
+</div>
+<div class="insta-post">
+<img alt="Realizácia" src="images/2.jpg"/>
+</div>
+<div class="insta-post">
+<img alt="Realizácia" src="images/3.jpg"/>
+</div>
+<div class="insta-post">
+<img alt="Realizácia" src="images/4.jpg"/>
+</div>
+<div class="insta-post">
+<img alt="Realizácia" src="images/5.jpg"/>
+</div>
+<div class="insta-post">
+<img alt="Realizácia" src="images/7.jpg"/>
+</div>
+<div class="insta-post">
+<img alt="Realizácia" src="images/8.jpg"/>
+</div>
+<div class="insta-post">
+<img alt="Realizácia" src="images/12.jpg"/>
+</div>
+</div>
+<div style="text-align: center;">
+<a class="btn-primary" href="https://www.facebook.com/" target="_blank">Pozrieť viac</a>
+</div>
+</div>
+</section>
 <!-- Contact Section -->
-<section id="contact" class="contact contact-alt">
-	<h2 class="section-title">Kontaktujte nás</h2>
-	<div class="contact-box">
-		<p><strong>Telefón:</strong>
-            <a
-                href="tel:+421904636317"
-				target="_blank"
-				style="font-weight: normal; text-decoration: underline;"
-			>
-                0904 636 317
+<section class="contact contact-alt" id="contact">
+<h2 class="section-title">Kontaktujte nás</h2>
+<div class="contact-box">
+<p><strong>Telefón:</strong>
+<a href="tel:+421907170568" style="font-weight: normal; text-decoration: underline;" target="_blank">
+                0907 170 568
 			</a>
-        </p>
-		<p>
-			<strong>WhatsApp:</strong>
-			<a
-				href="https://wa.me/+421904636317"
-				target="_blank"
-				style="font-weight: normal; text-decoration: underline;"
-			>
+</p>
+<p>
+<strong>WhatsApp:</strong>
+<a href="https://wa.me/421907170568
+4" style="font-weight: normal; text-decoration: underline;" target="_blank">
 				Napíšte nám
 			</a>
-		</p>
-        <p>
-			<strong>Email:</strong>
-			<a
-                href="mailto:kmodtahovka@gmail.com"
-				target="_blank"
-				style="font-weight: normal; text-decoration: underline;"
-			>
-                kmodtahovka@gmail.com
-			</a>
-		</p>
-	</div>
+</p>
+</div>
 </section>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p id="footer-text"></p>
-        </div>
-    </footer>
-
-    <a href="#contact" class="floating-cta"><i class="fas fa-envelope"></i></a>
-
-    <script>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<p id="footer-text">© 2026 Najlacnejší odťah | Preprava strojov a techniky | 0907 170 568</p>
+</div>
+</footer>
+<a class="floating-cta" href="#contact"><i class="fas fa-envelope"></i></a>
+<script>
         // Slideshow functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
@@ -1428,7 +1386,7 @@ function startTypedText(text) {
     // Counter animation
 document.addEventListener('DOMContentLoaded', function () {
     const counters = [
-        { id: 'counter1', target: 3 },
+        { id: 'counter1', target: 5 },
         { id: 'counter2', target: 100, suffix: '%' },
         { id: 'counter3', target: 100, suffix: '%' }
     ];
