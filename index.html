@@ -1337,60 +1337,7 @@ function startTypedText(text) {
     }
   }
 
-  fetch('content.json')
-    .then(res => res.json())
-    .then(data => {
-      // Top Bar
-      document.getElementById('topbar-phone').textContent = data.topBar.phone;
-      document.getElementById('topbar-email').textContent = data.topBar.email;
-      document.getElementById('logo-text').textContent = data.header.logoText;
-      // Hero Section
-      document.getElementById('hero-headline').textContent = data.hero.headline;
-      startTypedText(data.hero.typedText);
-
-      // Services Section
-      document.getElementById('services-title').textContent = data.services.title;
-      document.getElementById('services-subtitle').textContent = data.services.subtitle;
-
-      const servicesContainer = document.getElementById('services-list');
-      data.services.items.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'service-card';
-        card.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
-        servicesContainer.appendChild(card);
-      });
-
-      // More Info Section
-      document.getElementById('moreinfo-title').textContent = data.moreInfo.title;
-      document.getElementById('moreinfo-subtitle').textContent = data.moreInfo.subtitle;
-
-      const infoContainer = document.getElementById('moreinfo-cards');
-      data.moreInfo.cards.forEach(card => {
-        const highlights = card.highlights.map(h => `<div class="highlight-item">${h}</div>`).join('');
-        const highlightSection = highlights ? `<div class="info-highlights">${highlights}</div>` : '';
-        const html = `
-          <div class="info-card fade-in-up">
-            <div class="info-header" onclick="toggleInfoCard(this)">
-              <div class="info-icon"><i class="fa-solid fa-circle-info"></i></div>
-              <div class="info-text">
-                <h3 class="info-title">${card.title}</h3>
-                <div class="info-subtitle">${card.subtitle}</div>
-              </div>
-              <div class="triangle-indicator"></div>
-            </div>
-            <div class="info-content">
-              <p class="info-description">${card.description}</p>
-              ${highlightSection}
-              <a href="#contact" class="btn-secondary">Objednať</a>
-            </div>
-          </div>`;
-        infoContainer.insertAdjacentHTML('beforeend', html);
-      });
-
-
-      // Footer
-      document.getElementById('footer-text').textContent = data.footer.text;
-    });
+  
 
     // Counter animation
 document.addEventListener('DOMContentLoaded', function () {
